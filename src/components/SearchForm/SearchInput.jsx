@@ -1,6 +1,6 @@
 import { Input } from "./SearchElem.styled";
 
-export const SearchInput = () => (
+const SearchInput = () => (
   <Input
     type="text"
     name="movieName"
@@ -10,3 +10,5 @@ export const SearchInput = () => (
     placeholder="Write movie name"
   />
 );
+
+export default SearchInput;

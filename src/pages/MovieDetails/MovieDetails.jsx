@@ -10,7 +10,7 @@ import {
 } from './MovieDetails.styled';
 import { BiLeftArrowAlt } from 'react-icons/bi';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const [movieInfo, setMovieInfo] = useState({});
   const location = useLocation();
   const { movieId } = useParams();
@@ -75,3 +75,5 @@ export const MovieDetails = () => {
     </main>
   );
 };
+
+export default MovieDetails;

@@ -2,9 +2,9 @@ import { getTrendingMovie } from '../../api/api';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Title, MovieList, MovieItem } from './Home.styled';
-import { Loader } from 'components/Loader/Loader';
+import Loader from 'components/Loader/Loader';
 
-export const Home = () => {
+const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
@@ -16,16 +16,16 @@ export const Home = () => {
       setIsLoading(false);
     });
   }, []);
-    
-    return (
+
+  return (
     <main>
       <Title>Trending today</Title>
       <MovieList>
         {trendingMovies.map(movie => (
           <li key={movie.id}>
-            < MovieItem to={`/movies/${movie.id}`} state={{ from: location }}>
+            <MovieItem to={`/movies/${movie.id}`} state={{ from: location }}>
               {movie.original_title || movie.name}
-            </ MovieItem>
+            </MovieItem>
           </li>
         ))}
         {isLoading && <Loader />}
@@ -33,3 +33,5 @@ export const Home = () => {
     </main>
   );
 };
+
+export default Home;

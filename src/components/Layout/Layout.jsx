@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import { Container, Header, HeaderLinks, Link } from './Layout.styled';
-import { Loader } from 'components/Loader/Loader';
+import Loader from 'components/Loader/Loader';
 
-export const Layout = () => {
+const Layout = () => {
   return (
     <Container>
       <Header>
@@ -18,3 +18,5 @@ export const Layout = () => {
     </Container>
   );
 };
+
+export default Layout;

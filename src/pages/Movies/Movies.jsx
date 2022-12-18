@@ -1,12 +1,12 @@
-import { Loader } from 'components/Loader/Loader';
+import Loader from 'components/Loader/Loader';
 import { MovieList, MovieItem } from 'pages/Home/Home.styled';
 import { useState, useEffect } from 'react';
 import { searchMovies } from 'api/api';
-import { SearchBar } from 'components/SearchForm/SearchBar';
+import SearchBar from 'components/SearchForm/SearchBar';
 import { useSearchParams, useLocation } from 'react-router-dom';
 
 
-export const Movies = () => {
+const Movies = () => {
     const location = useLocation();
     const [searchParams, setSearchParams] = useSearchParams();
     const movieName = searchParams.get('movieName') ?? '';
@@ -61,3 +61,5 @@ export const Movies = () => {
     </main>
     );
 }
+
+export default Movies;
